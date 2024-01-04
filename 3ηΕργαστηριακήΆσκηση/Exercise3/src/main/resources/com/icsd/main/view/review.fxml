@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="reviewVBox" spacing="5.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.icsd.controller.ReviewController">
+   <children>
+      <AnchorPane>
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="668.0" spacing="5.0">
+               <children>
+                  <AnchorPane maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" prefHeight="40.0" prefWidth="40.0">
+                     <children>
+                        <ImageView fx:id="userReviewProfilePic" fitHeight="32.0" fitWidth="32.0" layoutX="4.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" styleClass="userReviewProfilePic" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="4.0" />
+                     </children>
+                  </AnchorPane>
+                  <Hyperlink fx:id="usernameUserReviewProfile" focusTraversable="false" text="Hyperlink" textFill="WHITE" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane maxHeight="32.0" maxWidth="100.0" minHeight="19.0" minWidth="73.0" prefHeight="19.0" prefWidth="100.0">
+         <children>
+            <ImageView fx:id="ratingImageReview" fitHeight="13.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true" styleClass="ratingImageReviews" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="0.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="commentAnch" />
+      <AnchorPane fx:id="imageRPane" />
+      <AnchorPane>
+         <children>
+            <HBox prefHeight="20.0" prefWidth="672.0" spacing="5.0">
+               <children>
+                  <Label text="Δημοσιεύθηκε στις :" textFill="WHITE" />
+                  <Label fx:id="reviewTimestamp" styleClass="reviewTimestamp" textFill="WHITE" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

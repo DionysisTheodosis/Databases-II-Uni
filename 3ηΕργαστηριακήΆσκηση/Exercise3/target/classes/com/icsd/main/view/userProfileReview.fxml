@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="reviewVBox" fillWidth="false" maxWidth="800.0" minWidth="800.0" prefHeight="136.0" prefWidth="800.0" spacing="5.0" styleClass="review_Pane" stylesheets="@mainfxml.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.icsd.controller.UserProfileReController">
+   <children>
+      <AnchorPane fx:id="attractionPane" maxWidth="800.0" minWidth="800.0" prefHeight="25.0" prefWidth="800.0">
+         <children>
+            <HBox fx:id="attractionVbox" alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label fx:id="attractionTitle" styleClass="usernameUserReviewProfile" text="Αξιοθέατο :" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Hyperlink fx:id="attractionNameHyperLink" focusTraversable="false" text="Hyperlink" textFill="WHITE" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="ratingPane" maxWidth="800.0" minWidth="800.0" prefHeight="21.0" prefWidth="803.0">
+         <children>
+            <ImageView fx:id="ratingImage" fitHeight="13.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true" styleClass="ratingImageReviews" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="0.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="commentPane" />
+      <AnchorPane fx:id="imagePane" />
+      <AnchorPane fx:id="creationTimePane" maxWidth="800.0" minWidth="800.0" prefWidth="800.0">
+         <children>
+            <HBox fx:id="creationTimeHbox" alignment="CENTER_LEFT" prefHeight="20.0" prefWidth="672.0" spacing="5.0">
+               <children>
+                  <Label fx:id="creationTimeTitle" text="Δημοσιεύθηκε στις :" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="creationTimeLabel" styleClass="reviewTimestamp" textFill="WHITE" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

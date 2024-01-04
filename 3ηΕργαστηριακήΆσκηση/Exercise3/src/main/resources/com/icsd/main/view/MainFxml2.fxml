@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainAnchorPanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="736.0" minWidth="1328.0" prefHeight="736.0" prefWidth="1328.0" styleClass="mainAnchorPanel" stylesheets="@mainfxml.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.icsd.controller.MainFxmlController">
+   <children>
+      <ImageView fx:id="backgroundImage" fitHeight="792.0" fitWidth="1487.0" layoutX="10.0" layoutY="-24.0" opacity="0.34" pickOnBounds="true" preserveRatio="true" styleClass="backgroundImage" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <StackPane fx:id="mainStackPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ScrollPane fx:id="attractionScrollPane" hbarPolicy="NEVER" styleClass="mainScrollPane" stylesheets="@mainfxml.css" />
+            <ScrollPane fx:id="mainScrollPane" hbarPolicy="NEVER" hvalue="1.0" maxHeight="736.0" maxWidth="1328.0" minHeight="736.0" minWidth="1328.0" prefHeight="736.0" prefWidth="1328.0" styleClass="mainScrollPane" stylesheets="@mainfxml.css" vmax="1" vmin="0" vvalue="1.0">
+               <content>
+                  <VBox fx:id="vboxApp" alignment="CENTER" spacing="60.0" styleClass="vboxApp" stylesheets="@mainfxml.css">
+                     <children>
+                        <AnchorPane fx:id="vboxAnchorPane" styleClass="vboxAnchorPane" stylesheets="@mainfxml.css">
+                           <children>
+                              <AnchorPane fx:id="topFvAnchorPane" layoutX="218.0" layoutY="516.0" prefHeight="197.0" prefWidth="879.0" styleClass="topFvAnchorPane" stylesheets="@mainfxml.css" AnchorPane.leftAnchor="218.0" AnchorPane.rightAnchor="217.0">
+                                 <children>
+                                    <ScrollPane fx:id="topFVScrollPane" pannable="true" prefHeight="211.0" prefWidth="879.0" styleClass="topFVScrollPane" stylesheets="@mainfxml.css" vbarPolicy="NEVER" AnchorPane.bottomAnchor="-14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <content>
+                                          <HBox fx:id="topFVHBox" prefHeight="100.0" prefWidth="200.0" spacing="5.0" styleClass="topFVHBox" stylesheets="@mainfxml.css">
+                                             <padding>
+                                                <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                             </padding>
+                                          </HBox>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </AnchorPane>
+                              <Label fx:id="titleLabel" alignment="TOP_CENTER" layoutX="4.0" layoutY="47.0" prefHeight="98.0" prefWidth="1314.0" styleClass="titleHeader" stylesheets="@mainfxml.css" text="BSTAttraction" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+                                 <font>
+                                    <Font size="48.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="overviewLabel" alignment="CENTER" layoutX="210.0" layoutY="234.0" minHeight="198.0" minWidth="895.0" prefHeight="198.0" prefWidth="895.0" styleClass="overviewText" stylesheets="@mainfxml.css" text="Καλώς ήλθατε στο BSTAttraction, την πύλη σας προς τον παγκόσμιο θαυμασμό και την ανακάλυψη! Είτε είστε έμπειρος ταξιδιώτης είτε πρωτάρης περιηγητής, η εφαρμογή μας σχεδιάστηκε για να κάνει κάθε ταξίδι αξέχαστο." textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="209.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="topFVLabel" alignment="CENTER" layoutY="454.0" minHeight="53.0" minWidth="296.0" prefHeight="53.0" prefWidth="1314.0" styleClass="topFVTitle" stylesheets="@mainfxml.css" text="Τα 5 κορυφαία αξιοθέατα" textFill="#514d4d" textOverrun="CLIP" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <font>
+                                    <Font size="35.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="searchAnchorPane" prefHeight="675.0" prefWidth="1314.0" styleClass="vboxAnchorPane" stylesheets="@mainfxml.css">
+                           <children>
+                              <Label fx:id="titleLabel1" alignment="TOP_CENTER" contentDisplay="CENTER" layoutY="14.0" prefHeight="59.0" prefWidth="1314.0" styleClass="titleHeader" stylesheets="@mainfxml.css" text="Αναζήτηση Αξιοθέατου" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="14.0">
+                                 <font>
+                                    <Font size="48.0" />
+                                 </font>
+                              </Label>
+                              <AnchorPane fx:id="attrTypeAnchorP" layoutX="268.0" layoutY="371.0" prefHeight="157.0" prefWidth="779.0" styleClass="topFvAnchorPane" stylesheets="@mainfxml.css">
+                                 <children>
+                                    <HBox fx:id="attrTypeHbox" alignment="CENTER" prefHeight="152.0" prefWidth="779.0" spacing="5.0" styleClass="topFVHBox" stylesheets="@mainfxml.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                       <padding>
+                                          <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                              </AnchorPane>
+                              <HBox alignment="CENTER" layoutX="367.0" layoutY="209.0" prefHeight="129.0" prefWidth="581.0" spacing="10.0">
+                                 <children>
+                                    <Label prefHeight="43.0" prefWidth="115.0" text="Αναζήτηση βάσει">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="typeOfCmbo" prefHeight="30.0" prefWidth="188.0" />
+                                    <ComboBox fx:id="searchCmbo" editable="true" prefHeight="30.0" prefWidth="188.0" />
+                                    <AnchorPane fx:id="searchLogoAp" prefHeight="89.0" prefWidth="39.0">
+                                       <children>
+                                          <ImageView fx:id="searchButton" fitHeight="39.0" fitWidth="41.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../pictures/search_icon64.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" />
+                           </padding>
+                        </AnchorPane>
+                     </children>
+                     <rotationAxis>
+                        <Point3D />
+                     </rotationAxis>
+                  </VBox>
+               </content>
+            </ScrollPane>
+            <ScrollPane fx:id="resultScrollPane" hbarPolicy="NEVER" styleClass="mainScrollPane" stylesheets="@mainfxml.css" visible="false" />
+         </children>
+      </StackPane>
+      <ImageView fx:id="logoImage" fitHeight="107.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true" styleClass="imageLogo" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+      <StackPane fx:id="stackPane" layoutX="1098.0" prefHeight="736.0" prefWidth="231.0" styleClass="menuPane" stylesheets="@mainfxml.css" visible="false" AnchorPane.leftAnchor="1098.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane prefHeight="694.0" prefWidth="232.0" style="-fx-background-color: transparent;">
+               <children>
+                  <VBox alignment="TOP_CENTER" layoutX="0.5185546875" prefHeight="736.0" prefWidth="231.0" styleClass="menuVBoxButtns" stylesheets="@mainfxml.css" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="80.0">
+                     <children>
+                        <VBox id="buttonMenuHome" fx:id="buttonMenuHome" alignment="CENTER" styleClass="buttonMenu" stylesheets="@mainfxml.css">
+                           <children>
+                              <AnchorPane maxHeight="70.0" maxWidth="70.0" minHeight="70.0" minWidth="70.0" prefHeight="70.0" prefWidth="70.0">
+                                 <children>
+                                    <ImageView fx:id="homeId" fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" styleClass="menuIcon" />
+                                 </children>
+                              </AnchorPane>
+                              <Label alignment="CENTER" prefHeight="17.0" prefWidth="232.0" styleClass="menuText" stylesheets="@mainfxml.css" text="Αρχική Σελίδα" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="3.0" />
+                           </VBox.margin>
+                        </VBox>
+                        <VBox id="buttonMenuSearch" fx:id="buttonMenuSearch" alignment="CENTER" layoutX="10.0" layoutY="10.0" styleClass="buttonMenu" stylesheets="@mainfxml.css">
+                           <children>
+                              <AnchorPane maxHeight="70.0" maxWidth="70.0" minHeight="70.0" minWidth="70.0" prefHeight="70.0" prefWidth="70.0" stylesheets="@mainfxml.css">
+                                 <children>
+                                    <ImageView fx:id="searchId" fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" styleClass="menuIcon" />
+                                 </children>
+                              </AnchorPane>
+                              <Label alignment="CENTER" prefHeight="17.0" prefWidth="232.0" styleClass="menuText" stylesheets="@mainfxml.css" text="Αναζήτηση" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="3.0" />
+                           </VBox.margin>
+                        </VBox>
+                        <VBox id="buttonMenuExit" fx:id="buttonMenuExit" alignment="CENTER" layoutX="10.0" layoutY="10.0" styleClass="buttonMenu" stylesheets="@mainfxml.css">
+                           <children>
+                              <AnchorPane maxHeight="70.0" maxWidth="70.0" minHeight="70.0" minWidth="70.0" prefHeight="70.0" prefWidth="70.0">
+                                 <children>
+                                    <ImageView fx:id="logoutId" fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" styleClass="menuIcon" />
+                                 </children>
+                              </AnchorPane>
+                              <Label alignment="CENTER" prefHeight="17.0" prefWidth="232.0" styleClass="menuText" stylesheets="@mainfxml.css" text="Έξοδος" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="3.0" />
+                           </VBox.margin>
+                        </VBox>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </children></StackPane>
+      <ImageView id="menuId" fx:id="menuId" fitHeight="43.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" styleClass="menuId" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0" />
+         
+   </children>
+</AnchorPane>

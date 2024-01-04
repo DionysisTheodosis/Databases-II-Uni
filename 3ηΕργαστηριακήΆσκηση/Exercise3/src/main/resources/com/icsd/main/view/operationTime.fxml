@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox fx:id="operationTimeHbox" prefHeight="23.0" prefWidth="618.0" spacing="5.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.icsd.controller.OperationTimeController">
+   <children>
+      <Label fx:id="dayLabel" prefHeight="20.0" prefWidth="105.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="hoursLabel" prefHeight="20.0" prefWidth="169.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <padding>
+      <Insets left="10.0" />
+   </padding>
+</HBox>

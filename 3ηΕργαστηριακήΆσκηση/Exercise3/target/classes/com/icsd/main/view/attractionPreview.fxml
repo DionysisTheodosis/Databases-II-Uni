@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="photoAnchor1" prefHeight="200.0" prefWidth="200.0" styleClass="anchorPanePhotos" stylesheets="@mainfxml.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.icsd.controller.AttractionPrVController">
+   <children>
+      <ImageView fx:id="photoImage" fitHeight="227.0" fitWidth="288.0" pickOnBounds="true" preserveRatio="true" styleClass="attr-photo" />
+      <ImageView fx:id="ratingStar" fitHeight="26.0" fitWidth="88.0" layoutX="186.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" styleClass="attr-photo" />
+      <Label fx:id="ratingId" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="170.0" layoutY="22.0" prefHeight="17.0" prefWidth="116.0" styleClass="ratingLabel" stylesheets="@mainfxml.css" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="10.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="attractionName" alignment="CENTER" layoutX="14.0" layoutY="162.0" prefHeight="17.0" prefWidth="273.0" styleClass="attractionNameLabel" stylesheets="@mainfxml.css" textFill="#fffefe" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

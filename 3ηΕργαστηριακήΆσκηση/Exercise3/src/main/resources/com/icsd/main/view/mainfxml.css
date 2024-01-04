@@ -1,0 +1,169 @@
+.top5Vbox{
+    -fx-background-color: transparent;
+}
+.scrollpane{
+    -fx-background-color: transparent;
+}
+.titleHbox{
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-padding: 0 0 0 0;
+    -fx-opacity: 0; /* Hide the scrollbar */
+}
+
+/* Show the scrollbar when the ScrollPane is hovered */
+.scroll-pane:hover .scroll-bar:vertical {
+    -fx-opacity: 1.0; /* Make the scrollbar visible */
+    -fx-padding: 0 0 0 0;
+    -fx-cursor:hand;
+}
+.scroll-pane .scroll-bar:vertical .thumb:pressed{
+    /* -fx-background-color: transparent;  Transparent thumb */
+    -fx-background-insets: 0; /* Remove padding */
+    -fx-background-radius: 0; /* Remove border radius */
+    -fx-cursor:closed-hand;
+}
+.mainScrollPane{
+    -fx-background-color: transparent;
+}
+.scrollPaneAnchor1{
+    -fx-background-color: transparent;
+}
+.vboxApp{
+    -fx-background-color: transparent;
+}
+vboxAnchorPane{
+    -fx-background-color: transparent;
+}
+.topFVScrollPane .viewport {
+    -fx-background-color: transparent;
+}
+
+.topFVScrollPane .scroll-bar:horizontal {
+    -fx-background-color: transparent;
+    -fx-padding: 0 0 0 0;
+    -fx-opacity: 0; /* Hide the scrollbar */
+}
+
+/* Show the scrollbar when the ScrollPane is hovered */
+.topFVScrollPane:hover .scroll-bar:horizontal {
+    -fx-opacity: 1.0; /* Make the scrollbar visible */
+    -fx-padding: 0 0 0 0;
+    -fx-cursor:hand;
+}
+.topFVScrollPane .scroll-bar:horizontal .thumb:pressed{
+    /* -fx-background-color: transparent;  Transparent thumb */
+    -fx-background-insets: 0; /* Remove padding */
+    -fx-background-radius: 0; /* Remove border radius */
+    -fx-cursor:closed-hand;
+}
+.topFvAnchorPane{
+    -fx-background-color: transparent;
+}
+.topFVScrollPane{
+    -fx-background-color: transparent;
+}
+.anchorPanePhotos{
+    -fx-background-color: transparent;
+}
+.anchorPanePhotos:hover{
+    -fx-cursor: hand;
+/*    -fx-background-color: derive(#b4592a, 20.0%);  Make it 20% brighter */
+    -fx-effect: dropshadow(three-pass-box, grey, 20.0, 0.6, 0.9, 0.0);
+
+}
+/* Open hand cursor on hover */
+
+
+/* Closed hand cursor when pressed */
+.anchorPanePhotos:pressed {
+    -fx-cursor: closed-hand;
+
+}
+
+.menuId:hover{
+    -fx-cursor: hand;
+    -fx-background-color: derive(#b4592a, 20.0%);  /*Make it 20% brighter*/ 
+    -fx-effect: dropshadow(three-pass-box, grey, 20.0, 0.4, 0.0, 0.0);
+}
+.menuId:pressed{
+    -fx-cursor: closed-hand;
+    -fx-background-color: blue;
+    -fx-effect: dropshadow(three-pass-box, blueviolet, 10.0, 0.5, 0.0, 0.0);
+}
+.menuPane{
+    -fx-background-color:rgba(0, 0, 0, 0.7)   
+}
+.buttonMenu:hover{
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, grey, 20.0, 0.5, 0.0, 0.0);
+}
+.buttonMenu:pressed{
+    -fx-cursor: closed-hand;
+    -fx-effect: dropshadow(three-pass-box, green, 10.0, 0.5, 0.0, 0.0);
+}
+.menuVBoxButtns{
+    -fx-spacing:40;
+}
+#buttonMenuExit:pressed{
+    -fx-cursor: closed-hand;
+    -fx-effect: dropshadow(three-pass-box, red, 10.0, 0.5, 0.0, 0.0); 
+}
+.anchorPanePhoto{
+    -fx-opacity:0.7;  
+}
+.anchorPanePhoto:hover{
+    -fx-opacity:1; 
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, gold, 10.0, 0.5, 0.0, 0.0); 
+}
+.anchorPanePhoto:pressed{
+    -fx-cursor: closed-hand;
+    -fx-effect: dropshadow(three-pass-box, rgb(31, 81, 255), 10.0, 0.5, 0.0, 0.0); 
+}
+.photoRevieScrollPane .scroll-bar:horizontal {
+    -fx-background-color: transparent;
+    -fx-padding: 0 0 0 0;
+    -fx-opacity: 0; /* Hide the scrollbar */
+}
+.overviewText {
+    -fx-font: bold 15px "Arial";
+    
+    -fx-fill: black;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);
+}
+.imageLogo:hover{
+    -fx-cursor: hand;
+}
+.imageLogo:pressed{
+    -fx-cursor: closed-hand;
+}
+/* Show the scrollbar when the ScrollPane is hovered */
+.photoRevieScrollPane:hover .scroll-bar:horizontal {
+    -fx-opacity: 1.0; /* Make the scrollbar visible */
+    -fx-padding: 0 0 0 0;
+    -fx-cursor:hand;
+}
+.photoRevieScrollPane .scroll-bar:horizontal .thumb:pressed{
+     -fx-background-color: transparent;   
+    -fx-background-insets: 0; /* Remove padding */
+    -fx-background-radius: 0; /* Remove border radius */
+    -fx-cursor:closed-hand;
+}
+.tel{ 
+    -fx-font-size: 14px; 
+}
+.review_Pane{
+    -fx-background-radius: 15px;
+    -fx-background-color:rgba(0, 0, 0, 0.4);
+    -fx-padding: 10px 0px 15px 10px;
+    -fx-margin: 0px 50px 0px 0px;
+
+}

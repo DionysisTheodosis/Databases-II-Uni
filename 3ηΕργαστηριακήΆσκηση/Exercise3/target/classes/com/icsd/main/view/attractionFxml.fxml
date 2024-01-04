@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane fx:id="scrollPaneAnchor11" maxWidth="1328.0" minHeight="1250.0" minWidth="1328.0" prefHeight="1450.0" prefWidth="1328.0" style="-fx-background-color: rgba(0, 0, 0, 0);" styleClass="scrollPaneAnchor1" stylesheets="@mainfxml.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.icsd.controller.AttractionController">
+   <children>
+      <Label fx:id="attractionNameLabel" alignment="TOP_CENTER" layoutY="30.0" prefHeight="98.0" prefWidth="1314.0" style="-fx-background-color: transparent;" styleClass="attractionName" stylesheets="@mainfxml.css" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="736.0" prefHeight="441.0" prefWidth="498.0" style="-fx-background-color: rgba(0, 0, 0, 0.7);" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="130.0">
+         <children>
+            <VBox fx:id="pictureVbox1" layoutX="-11.0" prefHeight="435.0" prefWidth="494.0" spacing="1.0" style="-fx-background-color: transparent;" styleClass="pictureVbox" stylesheets="@mainfxml.css" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+               <children>
+                  <AnchorPane prefHeight="333.0" prefWidth="563.0">
+                     <children>
+                        <ImageView fx:id="largeImage" fitHeight="333.0" fitWidth="494.0" layoutX="99.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <HBox fx:id="uploaderHbox" layoutX="6.0" layoutY="307.0" prefHeight="26.0" prefWidth="200.0" style="-fx-background-color: rgba(0, 0, 0, 0.4);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <children>
+                              <Label fx:id="uploaderLabel" contentDisplay="CENTER" prefHeight="33.0" text="Uploader:" textFill="WHITE">
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                              </Label>
+                              <Hyperlink fx:id="userHyper" contentDisplay="CENTER" focusTraversable="false" prefHeight="29.0" textAlignment="CENTER" textFill="WHITE" />
+                           </children>
+                        </HBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="98.0" prefWidth="494.0">
+                     <children>
+                        <ScrollPane id="photoReviewScrollPane" layoutX="6.0" pannable="true" prefHeight="98.0" prefWidth="494.0" style="-fx-background-color: rgba(0, 0, 0, 0);" styleClass="photoReviewScrollPane" stylesheets="@mainfxml.css" vbarPolicy="NEVER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <content>
+                              <HBox fx:id="HboxPictures" prefHeight="84.0" prefWidth="616.0" spacing="0.5">
+                                 <padding>
+                                    <Insets top="2.0" />
+                                 </padding>
+                              </HBox>
+                           </content>
+                           <padding>
+                              <Insets left="5.0" right="5.0" />
+                           </padding>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <VBox fx:id="last3ReviewsVbox" fillWidth="false" layoutX="10.0" layoutY="130.0" maxHeight="409.0" maxWidth="618.0" minHeight="298.0" minWidth="478.0" prefHeight="311.0" prefWidth="618.0" style="-fx-background-color: transparent;" styleClass="last3ReviewsVbox" stylesheets="@mainfxml.css" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="130.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" maxHeight="28.0" maxWidth="618.0" minHeight="28.0" minWidth="618.0" prefHeight="28.0" prefWidth="618.0">
+               <children>
+                  <AnchorPane maxHeight="34.0" minHeight="28.0" prefHeight="34.0" prefWidth="119.0">
+                     <children>
+                        <ImageView fx:id="starRating" fitHeight="20.0" fitWidth="106.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="4.0" />
+                     </children>
+                  </AnchorPane>
+                  <Label fx:id="numberOfReviews" prefHeight="28.0" prefWidth="39.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="23.0" prefWidth="617.0" spacing="5.0">
+               <children>
+                  <Label prefHeight="28.0" prefWidth="129.0" text="Τύπος Αξιοθέατου:">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="attractionTypeLbl">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="618.0" spacing="5.0">
+               <children>
+                  <Label prefHeight="26.0" prefWidth="112.0" text="Τέλος Εισόδου:">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="entranceFeeLabel">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox fx:id="emailHbox" alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="618.0" spacing="5.0">
+               <children>
+                  <Label prefHeight="25.0" prefWidth="64.0" text="Email:">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="618.0" spacing="5.0">
+               <children>
+                  <Label prefHeight="26.0" prefWidth="99.0" text="Ιστοσελίδα:">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Hyperlink fx:id="websiteLink" focusTraversable="false" prefHeight="26.0" prefWidth="269.0" wrapText="true" />
+               </children>
+            </HBox>
+            <HBox fx:id="telephoneHbox" alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="618.0" spacing="5.0" stylesheets="@mainfxml.css">
+               <children>
+                  <Label prefHeight="25.0" prefWidth="81.0" text="Τηλέφωνο:">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <VBox fx:id="operationTimeVBox" prefHeight="179.0" prefWidth="272.0">
+               <children>
+                  <Label text="Ωράριο Λειτουργίας" underline="true">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+      <VBox fx:id="attrDetailsVbox" layoutX="25.0" layoutY="473.0" prefHeight="377.0" prefWidth="618.0" style="-fx-background-color: transparent;" styleClass="attrDetailsVbox" stylesheets="@mainfxml.css" AnchorPane.leftAnchor="25.0">
+         <children>
+            <HBox prefHeight="31.0" prefWidth="618.0" spacing="5.0">
+               <children>
+                  <Label prefHeight="100.0" prefWidth="71.0" text="Περιοχή:">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="placeLabel" prefHeight="32.0" prefWidth="540.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <AnchorPane prefHeight="332.0" prefWidth="618.0">
+               <children>
+                  <WebView fx:id="mapView" layoutX="109.0" maxHeight="332.0" maxWidth="424.0" minHeight="300.0" minWidth="400.0" pickOnBounds="true" prefHeight="323.0" prefWidth="414.0" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="109.0" AnchorPane.rightAnchor="95.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+      <AnchorPane minHeight="367.0" minWidth="1328.0" prefHeight="468.0" prefWidth="1328.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="850.0">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <children>
+            <Label alignment="CENTER" layoutX="589.0" layoutY="7.0" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: rgba(0, 0, 0, 0.7);" text="Κριτικές" textAlignment="CENTER" textFill="WHITE" underline="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="321.0" layoutY="42.0" style="-fx-background-color: rgba(0, 0, 0, 0.5);" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <ScrollPane fitToHeight="true" hbarPolicy="NEVER" layoutX="322.0" prefHeight="550.0" prefWidth="685.0" style="-fx-background-color: rgba(0, 0, 0, 0);">
+                     <content>
+                        <AnchorPane maxWidth="684.0" minWidth="672.0" prefHeight="674.0" prefWidth="684.0" style="-fx-background-color: rgba(0, 0, 0, 0);">
+                           <children>
+                              <VBox fx:id="reviewsVBox" alignment="CENTER" layoutX="300.0" maxWidth="668.0" minWidth="668.0" prefHeight="674.0" prefWidth="684.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

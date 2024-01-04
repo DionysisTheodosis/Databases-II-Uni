@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.text.TextFlow?>
+
+<ScrollPane hbarPolicy="NEVER" pannable="true" prefHeight="67.0" prefWidth="672.0" style="-fx-background-color: transparent;" vbarPolicy="ALWAYS" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.icsd.controller.ReviewCommentController">
+   <content>
+      <TextFlow>
+         <children>
+            <Label fx:id="reviewComment" contentDisplay="TEXT_ONLY" maxWidth="668.0" minWidth="668.0" prefWidth="668.0" style="-fx-background-color: transparent;" styleClass="commentReview" text="Ένα από τα πιο ωραία μουσεία που έχω επισκεφτεί, όχι μόνο για τα εκθέματα του,αλλά και ως χώρος. Απαραίτητη η επίσκεψη αφού πρώτα δει κανείς την Ακρόπολη των Αθηνών.Το προσωπικό είναι πολύ εξυπηρετικό, ευγενέστατο και κατατοπιστικό.Ο χώρος λιτός, μοντέρνος, λειτουργικός και πολύ έξυπνα δομημένος, σου δίνει την ευκαιρία για έναταξίδι στο χρόνο σχετικά με την Ακρόπολη και την Αθήνα γενικότερα.Αξίζει όσο τίποτα η επίσκεψη. Πραγματικά πρόκειται για ένα μουσείο αντάξιο του χώρου της Ακρόποληςπου εξυπηρετεί." textFill="WHITE" wrapText="true" />
+         </children>
+      </TextFlow>
+   </content>
+</ScrollPane>

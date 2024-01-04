@@ -1,0 +1,4 @@
+--patch-module
+com.icsd.main=_
+--add-reads
+com.icsd.main=ALL-UNNAMED

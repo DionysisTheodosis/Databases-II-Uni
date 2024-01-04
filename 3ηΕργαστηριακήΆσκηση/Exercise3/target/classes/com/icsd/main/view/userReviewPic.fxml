@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="user_R_Ap" maxHeight="61.0" maxWidth="93.0" minHeight="61.0" minWidth="93.0" prefHeight="61.0" prefWidth="93.0" styleClass="user_R_Ap" stylesheets="@mainfxml.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.icsd.controller.UserReviewPicController">
+   <children>
+      <ImageView fx:id="user_R_Iv" fitHeight="61.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true" styleClass="user_R_Iv" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+   </children>
+</AnchorPane>
