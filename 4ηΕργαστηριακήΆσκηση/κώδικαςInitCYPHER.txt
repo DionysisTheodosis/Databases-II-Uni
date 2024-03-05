@@ -1,0 +1,211 @@
+//EISAGWGH DEDOMENWN VASHS KAI DHMIOURGIA TWN KOMVWN KAI PROSTHIKI TOU CONSTRAINT GIA MONADIKOTHTA KAI INDEXING
+//GIA THN PERIOXH
+LOAD CSV WITH HEADERS FROM "file:///area.csv" AS row
+MERGE (a:Area{areaName: row.areaName})
+SET a.regionName=row.regionName
+RETURN(a);
+CREATE CONSTRAINT FOR (a:Area) REQUIRE (a.areaName) IS UNIQUE;
+
+//GIA TON PINAKA HMERA
+LOAD CSV WITH HEADERS FROM "file:///day.csv" AS row
+MERGE (d:Day{dayName: row.dayName})
+RETURN(d);
+CREATE CONSTRAINT FOR (d:Day) REQUIRE (d.dayName) IS UNIQUE;
+
+//GIA TON PINAKA ATTRACTION
+LOAD CSV WITH HEADERS FROM "file:///attraction.csv" AS row
+MERGE (a:Attraction{attractionName: row.attractionName})
+SET a.entranceFee=toFloat(row.entrance_fee),a.website=row.website,a.attr_profilePic=toInteger(row.attr_profilePic),a.areaName=row.areaName,a.attractionType=row.attractionType
+RETURN(a);
+CREATE CONSTRAINT FOR (a:Attraction) REQUIRE (a.attractionName) IS UNIQUE;
+
+//GIA TON PINAKA ATTRACTION_TYPE
+LOAD CSV WITH HEADERS FROM "file:///attraction_Type.csv" AS row
+MERGE (a:Attraction_Type {typeName: row.typeName})
+SET a.attrTypeImage = toInteger(row.attrTypeImage)
+RETURN a;
+CREATE CONSTRAINT FOR (a:Attraction_Type) REQUIRE (a.typeName) IS UNIQUE;
+
+//GIA TON PINAKA REGION 
+LOAD CSV WITH HEADERS FROM "file:///region.csv" AS row
+MERGE (r:Region{regionName: row.regionName})
+SET r.countryName=row.countryName
+RETURN(r);
+CREATE CONSTRAINT FOR (r:Region) REQUIRE (r.regionName) IS UNIQUE;
+
+//GIA TON PINAKA COUNTRY
+LOAD CSV WITH HEADERS FROM "file:///country.csv" AS row
+MERGE (c:Country{countryName: row.countryName})
+RETURN(c);
+CREATE CONSTRAINT FOR (c:Country) REQUIRE (c.countryName) IS UNIQUE
+
+//GIA TON PINAKA EMAIL ATTRACTION
+LOAD CSV WITH HEADERS FROM "file:///email_attraction.csv" AS row
+MERGE (e:Email_Attraction{email: row.email})
+SET e.attractionName=row.attractionName
+RETURN(e);
+CREATE CONSTRAINT FOR (e:Email_Attraction) REQUIRE (e.email) IS UNIQUE;
+
+//GIA TON PINAKA TELEPHONE ATTRACTION
+LOAD CSV WITH HEADERS FROM "file:///telephone_attraction.csv" AS row
+MERGE (t:Telephone_Attraction{telephone: row.telephone})
+SET t.attractionName=row.attractionName
+RETURN(t);
+CREATE CONSTRAINT FOR (t:Telephone_Attraction) REQUIRE (t.telephone) IS UNIQUE;
+
+//GIA TON PINAKA MAP
+LOAD CSV WITH HEADERS FROM "file:///map.csv" AS row
+MERGE (m:Map{mapID: toInteger(row.mapID)})
+SET m.attractionName=row.attractionName,m.embeded_url=row.embeded_url
+RETURN(m);
+CREATE CONSTRAINT FOR (m:Map) REQUIRE (m.mapID) IS UNIQUE;
+
+//GIA TON PINAKA OperationTime
+LOAD CSV WITH HEADERS FROM "file:///operation_Time.csv" AS row
+MERGE (o:OperationTime{attractionName: row.attractionName,dayName: row.dayName})
+SET o.open=row.open,o.close=row.close
+RETURN(o);
+CREATE CONSTRAINT FOR (o:OperationTime) REQUIRE (o.attractionName,o.dayName) IS UNIQUE;
+
+//GIA TON PINAKA PICTURE
+LOAD CSV WITH HEADERS FROM "file:///picture.csv" AS row
+MERGE (p:Picture{pictureID: toInteger(row.pictureID)})
+SET p.picture_url=row.picture_url,p.attractionName=row.attractionName,p.username=row.username
+RETURN(p);
+CREATE CONSTRAINT FOR (p:Picture) REQUIRE (p.pictureID) IS UNIQUE;
+
+//GIA TON PINAKA REVIEW
+LOAD CSV WITH HEADERS FROM "file:///review.csv" AS row
+MERGE (r:Review{attractionName: row.attractionName,username: row.username})
+SET r.createdAt=row.createdAt,r.comment=row.comment,r.rating=toFloat(row.rating)
+RETURN(r);
+CREATE CONSTRAINT FOR (r:Review) REQUIRE (r.attractionName,r.username) IS UNIQUE;
+
+//GIA TON PINAKA USER
+LOAD CSV WITH HEADERS FROM "file:///user.csv" AS row
+MERGE (u:User{username: row.username})
+SET u.name=row.surname,u.lastname=row.lastname,u.email=row.email,u.userProfilePic=toInteger(row.userProfilePic)
+RETURN(u);
+CREATE CONSTRAINT FOR (u:User) REQUIRE (u.username) IS UNIQUE;
+
+//DHMIOURGIA TWN SYSXETISEWN
+
+//ATTRACTION ME AREA
+MATCH (a:Attraction), (ar:Area)
+WHERE a.areaName = ar.areaName
+CREATE (a)-[:IN_AREA]->(ar);
+
+//ATTRACTION ME PICTURE
+MATCH (a:Attraction), (p:Picture)
+WHERE a.attr_profilePic = p.pictureID
+CREATE (a)-[:HAS_PROFILE_PIC]->(p);
+
+//ATTRACTION ME ATTRACTION TYPE
+MATCH (a:Attraction), (at:Attraction_Type)
+WHERE a.attractionType = at.typeName
+CREATE (a)-[:TYPE_OF]->(at);
+
+//ATTRACTION TYPE ME PICTURE
+MATCH (at:Attraction_Type), (p:Picture)
+WHERE at.attrTypeImage = p.pictureID
+CREATE (at)-[:ATTRACTION_TYPE_IMAGE]->(p);
+
+//OperationTime ME ATTRACTION
+MATCH (o:OperationTime), (a:Attraction)
+WHERE o.attractionName = a.attractionName
+CREATE (o)-[:OF]->(a);
+
+//OperationTime ME DAY
+MATCH (o:OperationTime), (d:Day)
+WHERE o.dayName = d.dayName
+CREATE (o)-[:OPERATES_ON]->(d);
+
+//AREA ME REGION
+MATCH (ar:Area), (r:Region)
+WHERE ar.regionName = r.regionName
+CREATE (ar)-[:IN_REGION]->(r);
+
+//REGION ME COUNTRY
+MATCH (r:Region), (c:Country)
+WHERE r.countryName = c.countryName
+CREATE (r)-[:IN_COUNTRY]->(c);
+
+//USER ME PICTURE
+MATCH (u:User), (p:Picture)
+WHERE u.userProfilePic = p.pictureID
+CREATE (u)-[:USER_PROFILE_PIC]->(p);
+
+//REVIEW ME PICTURE
+MATCH (r:Review), (p:Picture)
+WHERE r.attractionName = p.attractionName AND r.username=p.username
+CREATE (r)-[:PICTURES_OF_REVIEW]->(p);
+
+//REVIEW ME ATTRACTION
+MATCH (r:Review), (a:Attraction)
+WHERE r.attractionName = a.attractionName
+CREATE (r)-[:REVIEW_FOR]->(a);
+
+//REVIEW ME USER
+MATCH (r:Review), (u:User)
+WHERE r.username=u.username
+CREATE (r)-[:REVIEW_FROM]->(u);
+
+//EMAIL ME ATTRACTION
+MATCH (e:Email_Attraction), (a:Attraction)
+WHERE e.attractionName=a.attractionName
+CREATE (e)-[:EMAIL_FOR]->(a);
+
+//TELEPHONE ME ATTRACTION
+MATCH (t:Telephone_Attraction), (a:Attraction)
+WHERE t.attractionName=a.attractionName
+CREATE (t)-[:TELEPHONE_FOR]->(a);
+
+//MAP ME ATTRACTION
+MATCH (m:Map), (a:Attraction)
+WHERE m.attractionName=a.attractionName
+CREATE (m)-[:IFRAME_FOR]->(a);
+
+
+//DIAGRAFH TWN PROPERTIES DHLADH TWN STHLWN POY EIXAME GIA XENA KLEIDIA APO TOU NODES
+
+//GIA TO ATTRACTION
+MATCH (a:Attraction)
+SET a.areaName = null, a.attractionType = null, a.attr_profilePic = null;
+
+//GIA TON AREA
+MATCH (ar:Area)
+SET ar.regionName = null;
+
+//GIA TO REGION
+MATCH (r:Region)
+SET r.countryName = null;
+
+//GIA TO ATTRACTION TYPE
+MATCH (at:Attraction_Type)
+SET at.attrTypeImage = null;
+
+//GIA TO EMAIL ATTRACTION
+MATCH (e:Email_Attraction)
+SET e.attractionName = null;
+
+//GIA TO TELEPHONE ATTRACTION
+MATCH (t:Telephone_Attraction)
+SET t.attractionName = null;
+
+//GIA TON USER
+MATCH (u:User)
+SET u.userProfilePic = null;
+
+//GIA TO REVIEW
+MATCH (r:Review)
+SET r.attractionName = null,r.username = null;
+
+//GIA TO PICTURE
+MATCH (p:Picture)
+SET p.attractionName = null,p.username = null;
+
+MATCH (o:OperationTime)
+SET o.attractionName = null,o.dayName = null;
+
+MATCH (m:Map)
+SET m.attractionName = null;

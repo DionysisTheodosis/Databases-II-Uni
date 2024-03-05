@@ -1,0 +1,36 @@
+//ERWTIMA 1.1 EMFANISH TWN TOP 5 AXIOTHEATWN
+MATCH (r:Review)-[:REVIEW_FOR]->(a:Attraction)
+MATCH(a)-[:HAS_PROFILE_PIC]->(p:Picture)
+WITH a, AVG(toFloat(r.rating)) AS avgRating, COUNT(r.rating) AS numReviews, p.picture_url AS mainPhoto
+RETURN a.attractionName, avgRating, numReviews, mainPhoto
+ORDER BY avgRating DESC, numReviews DESC
+LIMIT 5;
+
+//ERWTHMA 1.5 EMFANISH TWN XWRWN POU EXOUN AXIOTHEATA
+MATCH (a:Attraction)-[:IN_AREA]->(ar:Area)-[:IN_REGION]->(rg:Region)-[:IN_COUNTRY]->(c:Country)
+RETURN DISTINCT c.countryName;
+
+//ERWTHMA 1.8 EMFANISH TWN TYPWN TWN AXIOTHEATWN KATHWS KAI THS FWTOGRAFIAS PROFIL GIA OSOUS EXOUN AXIOTHEATA
+MATCH (a:Attraction)-[:TYPE_OF]->(at:Attraction_Type)-[:ATTRACTION_TYPE_IMAGE]->(p:Picture)
+RETURN DISTINCT at.typeName,p.picture_url;
+
+//ERWTHMA 1.19 EMFANISH TWN STOIXEIWN TWN KRITIKWN GIA ENNA DOSMENO AXIOTHEATO
+MATCH (r:Review)-[:REVIEW_FOR]->(a:Attraction { attractionName: 'Παρθενώνας' })
+MATCH (r)-[:REVIEW_FROM]->(u:User)-[:USER_PROFILE_PIC]->(p:Picture)
+RETURN r.createdAt AS createdAt,
+       r.comment AS comment,
+       r.rating AS rating,
+       u.username AS username,
+       a.attractionName AS attractionName,
+       p.picture_url AS picture_url
+ORDER BY r.createdAt DESC
+LIMIT 3;
+
+//ERWTHMA  1.20 EMFANISH OLWN TWN KRITIKWN ENWS XRHSTH VASH TO USERNAME
+MATCH (r:Review)-[:REVIEW_FROM]->(u:User { username: 'user2' })
+MATCH (r)-[:REVIEW_FOR]->(a:Attraction)
+RETURN a.attractionName AS attractionName,
+       r.rating AS rating,
+       r.comment AS comment,
+       r.createdAt AS createdAt  
+ORDER BY r.createdAt;
